@@ -1,0 +1,23 @@
+{
+  "name": "gossipmonger-peer",
+  "version": "0.1.0",
+  "description": "Peer datastructure for Gossipmonger",
+  "scripts": {
+    "test": "node scripts/test.js"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "nodeunit": "0.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tristanls/gossipmonger-peer.git"
+  },
+  "keywords": [
+    "gossip",
+    "scuttlebutt",
+    "peer"
+  ],
+  "author": "Tristan Slominski <tristan.slominski@gmail.com>",
+  "license": "MIT"
+}
