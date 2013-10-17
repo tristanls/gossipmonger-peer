@@ -68,8 +68,7 @@ Iterates through `intervals` to calculate the sum.
 
   * `sum`: _Integer_ Current sum.
   * `newInterval`: _Integer_ New interval being added to calculate the mean.
-  * `oldInterval`: _Integer_ _(Default: undefined)_ Old interval being removed 
-          from being used in calculating the mean.
+  * `oldInterval`: _Integer_ _(Default: undefined)_ Old interval being removed from being used in calculating the mean.
   * Return: _Integer_ Calculated sum.
 
 Instead of iterating through an array, simply adds `newInterval` to `sum` and substracts `oldInterval` if present.
@@ -79,22 +78,14 @@ Instead of iterating through an array, simply adds `newInterval` to `sum` and su
   * `id`: _String_ Id of the peer.
   * `options`: _Object_
     * `data`: _Object_ _(Default: `{}`)_ Peer data.
-    * `intervals`: _Array_ _(Default: [750])_ An array of the last 
-            (up to `MAX_INTERVALS`) intervals between times when the peer has 
-            been seen. 
+    * `intervals`: _Array_ _(Default: [750])_ An array of the last (up to `MAX_INTERVALS`) intervals between times when the peer has been seen. 
     * `intervalsMean`: _Integer_ _(Default: undefined)_ Memoized intervals mean. 
-    * `lastTime`: _Integer_ _(Default: undefined)_ The last time the peer has been seen (in milliseconds
-            since midnight Jan 1, 1970).
-    * `live`: _Boolean_ _(Default: true)_ Indicator whether or not the peer is
-            thought to be live.
-    * `maxVersionSeen`: _Integer_ _(Default: 0)_ Vector clock value indicating
-            the last version of the peer that has been observed.
-    * `MAX_INTERVALS`: _Integer_ _(Default: 100)_ The maximum number of
-            intervals to keep in `intervals`.  
-    * `sum`: _Integer_ _(Default: undefined)_ Memoized sum of intervals to make
-            intervals mean calculation more efficient.          
-    * `transport`: _Any_ Any data identifying this peer to the transport mechanism 
-            that is required for correct transport operation.
+    * `lastTime`: _Integer_ _(Default: undefined)_ The last time the peer has been seen (in milliseconds since midnight Jan 1, 1970).
+    * `live`: _Boolean_ _(Default: true)_ Indicator whether or not the peer isthought to be live.
+    * `maxVersionSeen`: _Integer_ _(Default: 0)_ Vector clock value indicating the last version of the peer that has been observed.
+    * `MAX_INTERVALS`: _Integer_ _(Default: 100)_ The maximum number of intervals to keep in `intervals`.  
+    * `sum`: _Integer_ _(Default: undefined)_ Memoized sum of intervals to make intervals mean calculation more efficient.          
+    * `transport`: _Any_ Any data identifying this peer to the transport mechanism that is required for correct transport operation.
 
 Creates a new instance of GossipmongerPeer.
 
@@ -107,8 +98,7 @@ Calculates deltas for this peer since `version`.
 
 ### gossipmongerPeer.markContact(time)
 
-  * `time`: _Integer_ _(Default: `new Date().getTime()`)_ The time this peer has 
-          been seen (in milliseconds since midnight Jan 1, 1970).
+  * `time`: _Integer_ _(Default: `new Date().getTime()`)_ The time this peer has been seen (in milliseconds since midnight Jan 1, 1970).
 
 Marks that contact with the peer occurred at `time`. This is used later in phi calculations.
 
@@ -122,8 +112,7 @@ Sets `live` property to `true`.
 
 ### gossipmongerPeer.phi([time])
 
-  * `time`: _Integer_ _(Default: `new Date().getTime()`)_ The time to use as
-          "now" in phi calculation (in milliseconds since midnight Jan 1, 1970).
+  * `time`: _Integer_ _(Default: `new Date().getTime()`)_ The time to use as "now" in phi calculation (in milliseconds since midnight Jan 1, 1970).
   * Return: _Number_ Calculated phi for this peer.
 
 See [The ϕ Accrual Failure Detector](http://ddg.jaist.ac.jp/pub/HDY+04.pdf).
@@ -132,8 +121,7 @@ See [The ϕ Accrual Failure Detector](http://ddg.jaist.ac.jp/pub/HDY+04.pdf).
 
   * `key`: _String_ Key to update.
   * `value`: _Any_ The value to update with.
-  * Return: _String_ If the key has been updated, the key is returned, otherwise
-          a `null` is returned instead. 
+  * Return: _String_ If the key has been updated, the key is returned, otherwise a `null` is returned instead. 
 
 Updates peer data and increments `maxVersionSeen` for the peer on which this is used. Intended for only manipulating data for the local peer.
 
@@ -142,8 +130,7 @@ Updates peer data and increments `maxVersionSeen` for the peer on which this is 
   * `key`: _String_ The key for the value to update.
   * `value`: _Any_ The value to update with.
   * `version`: _Integer_ The vector clock version of this key value pair.
-  * Return: _String_ If the key has been updated, the key is returned, otherwise
-          a `null` is returned instead.
+  * Return: _String_ If the key has been updated, the key is returned, otherwise a `null` is returned instead.
 
 Updated peer data and sets `maxVersionSeen` to `version` if the `version` is greater than `maxVersionSeen`. Intended for manipulating data for remote peers cached locally.
 
