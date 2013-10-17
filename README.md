@@ -137,7 +137,7 @@ See [The ϕ Accrual Failure Detector](http://ddg.jaist.ac.jp/pub/HDY+04.pdf).
 
 Updates peer data and increments `maxVersionSeen` for the peer on which this is used. Intended for only manipulating data for the local peer.
 
-### gossipmongerPeer.updateFromDelta(key, value, version)
+### gossipmongerPeer.updateWithDelta(key, value, version)
 
   * `key`: _String_ The key for the value to update.
   * `value`: _Any_ The value to update with.
